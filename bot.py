@@ -1,7 +1,7 @@
 import praw
 import time
 
-r = praw.Reddit(user_agent = "Simple replybot by Adam")
+r = praw.Reddit(user_agent = "Automated replies to misspellings")
 print("Logging in...")
 r.login("DefinitelyCorrect", "DefinitelyCorrect") #Possible error here.
 
