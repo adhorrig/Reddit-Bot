@@ -3,7 +3,7 @@ import time
 
 r = praw.Reddit(user_agent = "Automated replies to misspellings")
 print("Logging in...")
-r.login("DefinitelyCorrect", "DefinitelyCorrect") #Possible error here.
+r.login("DefinitelyCorrect", "DefinitelyCorrect", disable_warning=True) #Possible error here.
 
 words_to_match = ['definately', 'defiantly', 'definantly', 'definetly', 'definatley']
 cache = []
@@ -24,5 +24,8 @@ def run_bot():
 		print("Comments loop finished.")
 			
 while True:
+    try:
 	run_bot()
-	time.sleep(10)
+    except praw.errors.RateLimitExceeded:
+        print 'Rate limit exceeded. Please wait.'
+    time.sleep(10)
