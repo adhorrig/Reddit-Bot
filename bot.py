@@ -20,7 +20,7 @@ def run_bot():
 			print("Match found! Comment ID: " +comment.id)
 			comment.reply('Did you mean to spell "definitely?"') #Possible error here.
 			print("Reply succesful!")
-			cache.appent(comment.id)
+			cache.append(comment.id)
 		print("Comments loop finished.")
 			
 while True:
